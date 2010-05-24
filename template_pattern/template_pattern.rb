@@ -24,3 +24,5 @@ class SevenDie < Game
     "Welcome to Seven Die game, it is #{@player1}'s turn"
   end
 end
+
+
