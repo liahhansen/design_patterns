@@ -4,7 +4,7 @@ describe "dirItem" do
   describe "dirItem when empty" do
     it "should have zero items" do
       di = DirItem.new
-      di.items.length.should == 0
+      di.dirItems.length.should == 0
     end
   end
   describe "a dirItem with one item" do
@@ -13,7 +13,11 @@ describe "dirItem" do
       @di.addItem('file')
     end
     it "should have one item" do
-      @di.items.length.should == 1
+      @di.dirItems.length.should == 1
+    end
+    it "should be able to remove the item" do
+      @di.removeItem(@di.dirItems[0])
+      @di.dirItems.length.should == 0
     end
   end
   describe "dirItem that contains an item that contains an other item" do
@@ -25,14 +29,7 @@ describe "dirItem" do
       @di1.addItem(@di2)
     end
     it "should have an item that contains another item" do
-      @di1.items[0].items[0].length.should == 1
+      @di1.dirItems[0].dirItems.length.should == 1
     end
-  end
-end
-
-describe "item" do
-  it "should exist" do
-    item1 = Item.new
-     item1.class.should == Item
   end
 end
