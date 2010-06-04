@@ -60,7 +60,7 @@ describe "C class" do
         #print results for developer
         results.keys.sort.each do |key|
           pass = allowable_range.include?(results[key]) ? 'PASS' : 'FAIL'
-          puts "value #{key.to_s.rjust(3)} occurring #{results[key].to_s.rjust(5)} times is in allowable range #{pass}"
+          puts "value #{key.to_s.rjust(3)} occurring #{results[key].to_s.rjust(5)} times is in allowable range? #{pass}"
         end
         
         #test that results spread equally within allowable range
