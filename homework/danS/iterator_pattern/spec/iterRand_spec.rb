@@ -22,7 +22,8 @@ describe "C class" do
       it "should return powers of 2 for each next call" do
         @values.each {|val| @w.next.should == val}
       end
-      it "should return random elements from the set of elements returned by @c.next" do
+      it "should return random elements from the set of elements returned by @iter.next" do
+        stub!(:rand).and_return(1,2,4,50)
         (0..9).each do |i|  
           nextVal = @w.next
           randVal = @w.random

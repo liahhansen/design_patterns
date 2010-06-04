@@ -16,14 +16,23 @@ end
 
 class W
   def initialize(iterator)
-    @powers = []
+    #@powers = []
+    @recent_random = 0
+    @index = 0
     @i = iterator
   end
   def next
-    @powers << @i.next
-    @powers.last
+    current = @i.next
+    @index += 1
+    r = rand(@index)
+    @recent_random = current if r == @index - 1 
+    current
+    #@powers << @i.next
+    #@powers.last
   end
   def random
-    @powers[rand(@powers.length)]
+    @recent_random
+    # r = rand(@powers.length)
+    # @powers[r] 
   end
 end
